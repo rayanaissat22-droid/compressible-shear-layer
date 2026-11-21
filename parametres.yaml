@@ -1,0 +1,21 @@
+# Paramètres de la SAÉ couche de cisaillement compressible
+
+physique:
+  lambdas: [0.0, 0.25, 0.5, 0.75]   # rapports de vitesse U2/U1
+  Pr: 0.5                           # nombre de Prandtl
+  T1: 300.0                         # température haute [K]
+  T2: 600.0                         # température basse [K]
+
+numerique:
+  s0: [0.2392, 0.6914, 0.2704]      # (F, F', F'')(0) de départ pour lambda = 0 (Schlichting)
+  L_haut: 8.0                       # borne haute en eta (L_bas = L_haut / sqrt(lambda))
+  L_zero: 30.0                      # borne basse pour lambda = 0
+  h: 0.01                          # pas RK4
+  eps: 1.0e-7                       # pas de la jacobienne
+  tol: 1.0e-10                      # tolérance de Newton
+  itmax: 30                         # itérations max de Newton
+
+dimensionnel:
+  U1: 5.0                           # vitesse haute choisie [m/s] (non imposée par le sujet)
+  nu1: 1.59e-5                      # viscosité cinématique de l'air à 300 K [m²/s]
+  L: 0.10                           # longueur tracée en x [m]
